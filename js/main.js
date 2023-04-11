@@ -10,26 +10,28 @@
 // randomNumber(1, 3);
 
 // код школы
-function getRandomPositiveInteger (a, b) {
-  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-  const result = Math.random() * (upper - lower + 1) + lower;
-  return Math.floor(result);
-}
-getRandomPositiveInteger(-100,10);
 
-function checkLine(line, maxLong) {
-  if (line.length <= maxLong ){
-    return true;
-  } else {
-    return false;
-  }
-}
-checkLine('привет', 2);
+// getRandomPositiveInteger(-100,10);
+
+// function checkLine(line, maxLong) {
+//   if (line.length <= maxLong ){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// checkLine('привет', 2);
 
 // код школы
 // function checkStringLength (string, length) {
 //   return string.length <= length;
 // }
 // checkStringLength('привет', 2);
+// import {getRandomPositiveInteger} from './util.js';
+// import {getRandomArrayElement} from './util.js';
+import {similarPhotos} from './data.js';
 
+// eslint-disable-next-line no-console
+console.log(
+  similarPhotos
+);
