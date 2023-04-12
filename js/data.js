@@ -1,5 +1,12 @@
 import {getRandomPositiveInteger} from './util.js';
 import {getRandomArrayElement} from './util.js';
+import {getRandomPositiveIntegerNotRepeat} from './util.js';
+
+const SIMILAR_PHOTO_COUNT = 25;
+
+const generatePhotoId = getRandomPositiveIntegerNotRepeat(1, 25);
+const generatePhotoUrl = getRandomPositiveIntegerNotRepeat(1, 25);
+const generatePhotoIdComment = getRandomPositiveIntegerNotRepeat(1, 300);
 
 const DESCRIPTIONS = [
   'природа',
@@ -39,22 +46,21 @@ const commentAutors = [
   'Михаил',
 ];
 const randomComment = () => ({
-  id: getRandomPositiveInteger(1, 300),
+  id: generatePhotoIdComment(),
   avatar: `img/avatar-${  getRandomPositiveInteger(1, 6)  }.svg`,
   message: getRandomArrayElement(commentMessages),
   name: getRandomArrayElement(commentAutors)
 
 });
 
-const SIMILAR_PHOTO_COUNT = 25;
 
 // const randomlikes = getRandomPositiveInteger(15, 200);
 
 function createPhoto() {
 
   return {
-    id: getRandomPositiveInteger(1, 25),
-    url: `photos/${  getRandomPositiveInteger(1, 25)  }.jpg`,
+    id: generatePhotoId(),
+    url: `photos/${  generatePhotoUrl()  }.jpg`,
     description: getRandomArrayElement(DESCRIPTIONS),
     likes: getRandomPositiveInteger(15, 200),
     comments: randomComment(),
